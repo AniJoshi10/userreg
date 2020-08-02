@@ -14,12 +14,12 @@
   + (Using pip3) $ pip3 install virtualenv
   
 -> Activate virtualenv
-  + $ virtualenv <prjname>
-  + $ cd <prjname>/Scripts
-  + $ bash activate.sh [OR] $ activate.bat
+  + $ virtualenv *prjname*
+  + $ cd *prjname*/bin
+  + $ source activate [OR] $ activate.bat
   
 -> Install python libraries from requirements.txt
-  + $ pip3 install -r requirements.txt
+  + $ pip3 install -r /location/of/this/file/requirements.txt
   
 -> Changes to <prjname>/myprj/myprj/settings.py
   + ALLOWED_HOSTS = [*]
