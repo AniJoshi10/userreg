@@ -1,0 +1,35 @@
+{% extends 'home.html' %}
+{% block page %}Change Password{% endblock %}
+{% block nav %}{{ name }}{% endblock %}
+{% block btnav %}<a class="btn btn-outline-primary" href="{% url 'login' %}">Login</a>
+<a class="btn btn-outline-primary" href="{% url 'dashboard' %}">Back</a>
+{% endblock %}
+
+{% block form %}
+{% include 'messages.html' %}
+
+	<form action="{% url 'change_passwd' %}" method="post">
+		{% csrf_token %}
+		<table class="table table-borderless">
+			<tbody>
+			{% for field in change_passwd%}
+			<tr class="text-info">
+				<th class="text-center p-0">
+					<label for="" class="mt-3"> {{ field.label_tag }} </label>  
+				</th>
+				<td >
+					<div class="text-warning">{{ field.errors }}</div>
+					{{ field }}
+				</td>
+			</tr>
+			</div>
+			{% endfor %}
+			</tbody>
+		</table>
+		<div class="d-flex justify-content-center">
+			<input type="submit" class="btn btn-primary" value="Change Password" name=""> 
+		</div>
+	</form>
+{% endblock %}
+
+

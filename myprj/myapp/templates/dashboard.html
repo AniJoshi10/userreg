@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block main %}
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Dashboard</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+	<a class="btn btn-outline-primary" href="{% url 'change_passwd' %}">Change Password</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="{% url 'logout' %}">Logout</a>
+</div>
+
+<div class="container row justify-content-center">
+  <div class="col-md-1 col-sm-0"></div>
+  <div class="col-md-10 col-sm-12 card-deck mb-3">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal text-center">Your Dashboard</h4>
+      </div>
+      <div class="card-body">
+				<div class=" row text-info">
+					<div class="col-sm-5 m-1 p-1 text-center">
+							<p style="font-size:6vh;">{{ name }}</p>
+							<p style="font-size:4vh;"><i class="fa fa-envelope-o m-3"></i>{{ email }}</p>
+							<p style="font-size:4vh;"><i class="fa fa-phone m-3"></i>{{ phoneno }}</p>
+							<p style="font-size:4vh;"><i class="fa fa-calendar m-3"></i>{{ birth_date }}</p> 
+							<p style="font-size:4vh;"><i class="fa fa fa-file-powerpoint-o m-3"></i>{{ passport }}</p>
+					</div>
+					<div class="col-sm-6">
+						<div class="container d-flex justify-content-center">
+							<img src="{{img}}" class="img-fluid rounded float-right" alt="Your Image"/>
+						</div>
+					</div>
+				</div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-1 col-sm-0"></div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+{% block page %}Login{% endblock %}
+{% block nav %}Home{% endblock %}
+{% block btnav %}<a class="btn btn-outline-primary" href="{% url 'signup' %}">Sign Up</a>{% endblock %}
+
+
+{% block form %}
+{% include 'messages.html' %}
+
+	<form action="{% url 'login' %}" method="post">
+		{% csrf_token %}
+		<table class="table table-borderless">
+			<tbody>
+			{% for field in loginform%}
+			<tr class="text-info">
+				<th class="text-center p-0">
+					<label for="" class="mt-3"> {{ field.label_tag }} </label>  
+				</th>
+				<td >
+					<div class="text-warning">{{ field.errors }}</div>
+					{{ field }}
+				</td>
+			</tr>
+			</div>
+			{% endfor %}
+			</tbody>
+		</table>
+		<div class="d-flex justify-content-center">
+			<input type="submit" class="btn btn-primary" value="Login" name=""> 
+		</div>
+	</form>
+{% endblock %}
