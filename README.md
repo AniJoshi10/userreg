@@ -2,7 +2,7 @@
 
 # 1. Requirements
 
--> (A detailed list is specified in /requirements.txt) \n
+-> (A detailed list is specified in /requirements.txt) <br />
   python 3.5 or higher
   django 3 or higher
   django-mongoengine
