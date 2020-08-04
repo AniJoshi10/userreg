@@ -6,7 +6,7 @@
 $ sudo nano /etc/apache2/sites-available/000-default.conf
 ```
 - Paste the following code 
-
+<pre>
 > <VirtualHost *:80> <br/>
 > ServerAdmin webmaster@example.com<br/>
 > DocumentRoot /home/ubuntu/django/myproject<br/>
@@ -25,6 +25,7 @@ $ sudo nano /etc/apache2/sites-available/000-default.conf
 > WSGIProcessGroup myproject<br/>
 > WSGIScriptAlias / /home/ubuntu/django/myproject/myproject/wsgi.py<br/>
 > </VirtualHost><br/>
+</pre>
 
 - Save the file and execute the following command
 
